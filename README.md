@@ -1,7 +1,7 @@
-#How To Validate Pretrained Models
+# How To Validate Pretrained Models
 
 ## Prerequisites
-###Package Installation
+### Package Installation
 1. Install Anaconda following the installation instructions [here](https://www.anaconda.com/download/)
 2. After Installing Anaconda, run the following command to create a virtual environment that contains the required packages:
    (File idx_environment.yml can be found [here](https://drive.google.com/file/d/136fF3l7v_9OCRz9p754iTUsLQ7SpVgdW/view?usp=sharing))
@@ -11,7 +11,7 @@ conda activate ICBHI
 ``` 
 3. Activate the virtual environment to run the testing scripts.
 
-###Data Preparation
+### Data Preparation
 1. Download the dataset from [here](https://drive.google.com/file/d/1zqoXBhf-3mpChcXa_t22Hvs-XBMiUz8F/view?usp=sharing) (Data will be available for download until 12/31).
 2. Move the zipfile to the data folder. Now we will refer this data path as $DATA_PATH.
 3. Unzip the dataset. 
@@ -44,13 +44,13 @@ $DATA_PATH/
 ```
 
 ## Testing
-###Pre-Processing
+### Pre-Processing
 ~~1. Run the data_prep.py script to generate the spectrograms from wav files.~~
 
 ~~2. Run the spec_to_image.py script to generate the spectrogram images from spec files.~~\
 Pre-Processing is no longer required since it is done while loading the data with the dataloader. But you can still check the expected results of the preprocessing in the $DATA_PATH/official/image_16k.
 
-###Run Validation
+### Run Validation
 1. Move to the code folder. Now the code is in the folder $CODE_PATH(unzip the [checkpoints.zip file](https://drive.google.com/file/d/1rLY0lN1aQMnmC-BdzMt1MTKo1nRQGeqq/view?usp=sharing)).
 $CODE_PATH hierarchy is as follows:
 ```
