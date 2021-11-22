@@ -21,8 +21,8 @@ sudo reboot
 3. After Installing Anaconda, run the following command to create a virtual environment that contains the required packages:
    (File idx_environment.yml can be found [here](https://drive.google.com/file/d/136fF3l7v_9OCRz9p754iTUsLQ7SpVgdW/view?usp=sharing))
 ```
-conda env create -n ICBHI --file idx_environment.yml
-conda activate ICBHI
+conda env create -n IDX2021 --file idx_environment.yml
+conda activate IDX2021
 ``` 
 4. Activate the virtual environment to run the testing scripts.
 
