@@ -91,7 +91,7 @@ python validate_with_diagnosis.py --prefix $PREFIX --fixed_size --data_size 256 
   --model $MODEL_TYPE(one of [ast, lstm, cnnlstm, resnet18]) --data_path $DATA_PATH
 
 example :
-python validate_with_diagnosis.py --prefix AST_T256_BS24_ADAM1e-5_MIXUP_SEED1234 --fixed_size --data_size 256 --batch_size 24\
-  --model ast --data_path $DATA_PATH/official/
+python validate_with_diagnosis.py --prefix AST_T256_BS24_ADAM3e-5_MIXUP_SEED1234 --fixed_size --data_size 256 --batch_size 24\
+--model ast --data_path ~/dataset/official/
 ```
 3. The output will be saved in the folder $CODE_PATH/results/{$PREFIX}_official/.
