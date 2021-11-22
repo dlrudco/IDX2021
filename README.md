@@ -2,14 +2,29 @@
 
 ## Prerequisites
 ### Package Installation
-1. Install Anaconda following the installation instructions [here](https://www.anaconda.com/download/)
-2. After Installing Anaconda, run the following command to create a virtual environment that contains the required packages:
+1. Run the following command to install the required packages:
+```
+sudo rm /etc/apt/sources.list.d/cuda*
+sudo apt remove --autoremove nvidia-cuda-toolkit
+sudo apt remove --autoremove nvidia-*
+sudo apt update
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-key adv --fetch-keys  http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+sudo bash -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64 /" > /etc/apt/sources.list.d/cuda.list'
+sudo apt-get update
+sudo apt-get install cuda-drivers-465
+   (not mandatory) sudo apt-get install cuda-11-1 
+   (not mandatory) sudo apt-get install libcudnn8
+sudo reboot
+```
+2. Install Anaconda following the installation instructions [here](https://www.anaconda.com/download/)
+3. After Installing Anaconda, run the following command to create a virtual environment that contains the required packages:
    (File idx_environment.yml can be found [here](https://drive.google.com/file/d/136fF3l7v_9OCRz9p754iTUsLQ7SpVgdW/view?usp=sharing))
 ```
 conda env create -n ICBHI --file idx_environment.yml
 conda activate ICBHI
 ``` 
-3. Activate the virtual environment to run the testing scripts.
+4. Activate the virtual environment to run the testing scripts.
 
 ### Data Preparation
 1. Download the dataset from [here](https://drive.google.com/file/d/1zqoXBhf-3mpChcXa_t22Hvs-XBMiUz8F/view?usp=sharing) (Data will be available for download until 12/31).
