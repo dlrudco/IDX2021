@@ -10,7 +10,7 @@ import torch.nn as nn
 from torch.cuda.amp import autocast
 import os
 import wget
-os.environ['TORCH_HOME'] = '../../pretrained_models'
+os.environ['TORCH_HOME'] = 'pretrained_models'
 import timm
 from timm.models.layers import to_2tuple,trunc_normal_
 
@@ -114,11 +114,11 @@ class ASTModel(nn.Module):
             if audioset_pretrain == True and imagenet_pretrain == False:
                 raise ValueError('currently model pretrained on only audioset is not supported, please set imagenet_pretrain = True to use audioset pretrained model.')
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-            if os.path.exists('../../pretrained_models/ast_audioset.pth') == False:
+            if os.path.exists('pretrained_models/ast_audioset.pth') == False:
                 # this model performs 0.4593 mAP on the audioset eval set
                 audioset_mdl_url = 'https://www.dropbox.com/s/cv4knew8mvbrnvq/audioset_0.4593.pth?dl=1'
-                wget.download(audioset_mdl_url, out='../../pretrained_models/ast_audioset.pth')
-            sd = torch.load('../../pretrained_models/ast_audioset.pth', map_location=device)
+                wget.download(audioset_mdl_url, out='pretrained_models/ast_audioset.pth')
+            sd = torch.load('pretrained_models/ast_audioset.pth', map_location=device)
             audio_model = ASTModel(label_dim=527, fstride=10, tstride=10, input_fdim=128, input_tdim=1024, imagenet_pretrain=False, audioset_pretrain=False, model_size='base384')
             audio_model = torch.nn.DataParallel(audio_model)
             audio_model.load_state_dict(sd, strict=False)

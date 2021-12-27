@@ -1,5 +1,5 @@
 import torch
-from dataset import RespiDataset, RespiWAVDataset
+from .dataset import RespiDataset, RespiWAVDataset
 from torch.utils.data import DataLoader
 import random
 from random import randint, shuffle

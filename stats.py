@@ -29,8 +29,11 @@ def calculate_stats(output, target, save_steps=1000):
     for k in range(classes_num):
 
         # Average precision
-        avg_precision = metrics.average_precision_score(
+        try:
+            avg_precision = metrics.average_precision_score(
             target[:, k], output[:, k], average=None)
+        except ValueError:
+            avg_precision = np.nan
 
         # AUC
         # auc = metrics.roc_auc_score(target[:, k], output[:, k], average=None)

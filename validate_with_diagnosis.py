@@ -50,7 +50,8 @@ def validate_official(args):
                                     initialize=True, num_mel=128, multi_label=args.multi_label,
                                     mean=None, std=None, fixed_length=args.data_size)
 
-    val_loader = DataLoader(val_dataset, num_workers=16, batch_size=args.batch_size * 2, shuffle=False, drop_last=False)
+    val_loader = DataLoader(val_dataset, num_workers=16, batch_size=args.batch_size * 2, shuffle=False, drop_last=False,
+        pin_memory=True)
 
     if args.model == 'resnet18':
         from models import ResidualNet

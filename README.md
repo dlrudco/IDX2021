@@ -21,8 +21,8 @@ sudo reboot
 3. After Installing Anaconda, run the following command to create a virtual environment that contains the required packages:
    (File idx_environment.yml can be found [here](https://drive.google.com/file/d/136fF3l7v_9OCRz9p754iTUsLQ7SpVgdW/view?usp=sharing))
 ```
-conda env create -n IDX2021 --file idx_environment.yml
-conda activate IDX2021
+conda env create -n ICBHI --file idx_environment.yml
+conda activate ICBHI
 ``` 
 4. Activate the virtual environment to run the testing scripts.
 
@@ -91,7 +91,7 @@ python validate_with_diagnosis.py --prefix $PREFIX --fixed_size --data_size 256 
   --model $MODEL_TYPE(one of [ast, lstm, cnnlstm, resnet18]) --data_path $DATA_PATH
 
 example :
-python validate_with_diagnosis.py --prefix AST_T256_BS24_ADAM3e-5_MIXUP_SEED1234 --fixed_size --data_size 256 --batch_size 24\
---model ast --data_path ~/dataset/official/
+python validate_with_diagnosis.py --prefix AST_T256_BS24_ADAM1e-5_MIXUP_SEED1234 --fixed_size --data_size 256 --batch_size 24\
+  --model ast --data_path $DATA_PATH/official/
 ```
 3. The output will be saved in the folder $CODE_PATH/results/{$PREFIX}_official/.
